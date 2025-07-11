@@ -136,17 +136,43 @@
             //}
             #endregion
             #region Q-7
-            static long Factorial(int n)
+            //static long Factorial(int n)
+            //{
+            //    if (n <= 1) return 1;
+            //    return n * Factorial(n - 1);
+            //}
+
+            //static void Main()
+            //{
+            //    Console.Write("Enter number: ");
+            //    int n = int.Parse(Console.ReadLine());
+            //    Console.WriteLine($"Factorial of {n} is: {Factorial(n)}");
+            //}
+            #endregion
+            #region Q-8
+            static string ChangeChar(string text, int index, char newChar)
             {
-                if (n <= 1) return 1;
-                return n * Factorial(n - 1);
+                if (index < 0 || index >= text.Length)
+                    return text;
+
+                char[] chars = text.ToCharArray();
+                chars[index] = newChar;
+                return new string(chars);
             }
 
             static void Main()
             {
-                Console.Write("Enter number: ");
-                int n = int.Parse(Console.ReadLine());
-                Console.WriteLine($"Factorial of {n} is: {Factorial(n)}");
+                Console.Write("Enter string: ");
+                string input = Console.ReadLine();
+
+                Console.Write("Enter index: ");
+                int index = int.Parse(Console.ReadLine());
+
+                Console.Write("Enter new character: ");
+                char ch = Console.ReadLine()[0];
+
+                string result = ChangeChar(input, index, ch);
+                Console.WriteLine("Modified string: " + result);
             }
             #endregion
 
