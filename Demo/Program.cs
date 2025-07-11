@@ -101,7 +101,7 @@
 
         static void Main(string[] args)
         {
-           //Functions
+            //Functions
 
             // These lines are commented out, likely from previous examples
             // related to PrintShape and Swap methods.
@@ -114,6 +114,35 @@
 
             // The image ends here, implying that the Main method would call SumArray
             // with an array as an argument in the next steps of the tut
+            #endregion
+
+            #region  V-4
+            // These lines are commented out, likely from previous examples
+            // related to the Swap method and array passing.
+            //Console.WriteLine("===== After Swapping [Outside] =====");
+            //Console.WriteLine($"X => {X}, Y => {Y}"); // Assumes X and Y were defined earlier
+
+            // These lines are commented out, likely related to the SumArray method.
+            //int[] numbers = { 5, 7, 8 };
+            //Console.WriteLine($"Before HashCode [Outside] => {numbers.GetHashCode()}");
+            //int result = SumArray(ref numbers); // Note: 'ref' would be needed if SumArray modified the array reference, but for passing an array, 'ref' isn't strictly necessary for the array contents to be modified by the method.
+            //Console.WriteLine($"After HashCode [Outside] => {numbers.GetHashCode()}");
+            //Console.WriteLine($"Result [Outside] => {result}");
+            //Console.WriteLine($"Item [Outside] => {numbers[0]}");
+
+            int X = 10, Y = 20, sum, multi; // Declares X, Y, sum, and multi variables.
+
+            // Calls a method named SumMulti.
+            // It passes X and Y by value, and 'sum' and 'multi' by 'out' keyword.
+            // The 'out' keyword means that the SumMulti method is responsible for
+            // assigning a value to 'sum' and 'multi' before returning.
+            SumMulti(X, Y, out sum, out multi);
+
+            // This line is commented out, suggesting that 'sum' might have been intended
+            // to be used or printed, but 'multi' is being printed.
+            //Console.WriteLine(sum);
+            Console.WriteLine(multi); // Prints the value assigned to 'multi' by the SumMulti method.
+
             #endregion
 
         }
