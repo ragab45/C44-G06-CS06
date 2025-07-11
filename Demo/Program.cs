@@ -117,34 +117,72 @@
             #endregion
 
             #region  V-4
-            // These lines are commented out, likely from previous examples
-            // related to the Swap method and array passing.
-            //Console.WriteLine("===== After Swapping [Outside] =====");
-            //Console.WriteLine($"X => {X}, Y => {Y}"); // Assumes X and Y were defined earlier
+            //// These lines are commented out, likely from previous examples
+            //// related to the Swap method and array passing.
+            ////Console.WriteLine("===== After Swapping [Outside] =====");
+            ////Console.WriteLine($"X => {X}, Y => {Y}"); // Assumes X and Y were defined earlier
 
-            // These lines are commented out, likely related to the SumArray method.
-            //int[] numbers = { 5, 7, 8 };
-            //Console.WriteLine($"Before HashCode [Outside] => {numbers.GetHashCode()}");
-            //int result = SumArray(ref numbers); // Note: 'ref' would be needed if SumArray modified the array reference, but for passing an array, 'ref' isn't strictly necessary for the array contents to be modified by the method.
-            //Console.WriteLine($"After HashCode [Outside] => {numbers.GetHashCode()}");
-            //Console.WriteLine($"Result [Outside] => {result}");
-            //Console.WriteLine($"Item [Outside] => {numbers[0]}");
+            //// These lines are commented out, likely related to the SumArray method.
+            ////int[] numbers = { 5, 7, 8 };
+            ////Console.WriteLine($"Before HashCode [Outside] => {numbers.GetHashCode()}");
+            ////int result = SumArray(ref numbers); // Note: 'ref' would be needed if SumArray modified the array reference, but for passing an array, 'ref' isn't strictly necessary for the array contents to be modified by the method.
+            ////Console.WriteLine($"After HashCode [Outside] => {numbers.GetHashCode()}");
+            ////Console.WriteLine($"Result [Outside] => {result}");
+            ////Console.WriteLine($"Item [Outside] => {numbers[0]}");
 
-            int X = 10, Y = 20, sum, multi; // Declares X, Y, sum, and multi variables.
+            //int X = 10, Y = 20, sum, multi; // Declares X, Y, sum, and multi variables.
 
-            // Calls a method named SumMulti.
-            // It passes X and Y by value, and 'sum' and 'multi' by 'out' keyword.
-            // The 'out' keyword means that the SumMulti method is responsible for
-            // assigning a value to 'sum' and 'multi' before returning.
-            SumMulti(X, Y, out sum, out multi);
+            //// Calls a method named SumMulti.
+            //// It passes X and Y by value, and 'sum' and 'multi' by 'out' keyword.
+            //// The 'out' keyword means that the SumMulti method is responsible for
+            //// assigning a value to 'sum' and 'multi' before returning.
+            //SumMulti(X, Y, out sum, out multi);
 
-            // This line is commented out, suggesting that 'sum' might have been intended
-            // to be used or printed, but 'multi' is being printed.
-            //Console.WriteLine(sum);
-            Console.WriteLine(multi); // Prints the value assigned to 'multi' by the SumMulti method.
+            //// This line is commented out, suggesting that 'sum' might have been intended
+            //// to be used or printed, but 'multi' is being printed.
+            ////Console.WriteLine(sum);
+            //Console.WriteLine(multi); // Prints the value assigned to 'multi' by the SumMulti method.
 
             #endregion
+            #region  V-5
+            // The image shows a section related to "Boxing and Unboxing"
+            // and specifically "Nullable Value Type".
 
+            // Boxing and Unboxing
+
+            #region Nullable Value Type
+            int? X = 10; // Declares a nullable integer X and initializes it to 10.
+                         // int? is shorthand for Nullable<int>.
+
+            Nullable<int> Z = 10; // Declares a Nullable<int> Z and initializes it to 10.
+                                  // This is equivalent to int? Z = 10;.
+
+            int Y; // Declares an integer Y.
+
+            // Conditional assignment based on X having a value.
+            if (X.HasValue) // Checks if X contains a non-null value.
+            {
+                Y = X.Value; // If X has a value, assign its value to Y.
+            }
+            else
+            {
+                Y = 0; // If X is null, assign 0 to Y.
+            }
+
+            // A more concise way to write the above conditional assignment using the null-coalescing operator.
+            // Y = X.HasValue ? X.Value : 0; // This line is commented out in the image but shown as an alternative.
+            // A more common and succinct way using the null-coalescing operator (??):
+            // Y = X ?? 0;
+
+            Console.WriteLine(Y); // Prints the value of Y.
+
+            // These lines are commented out, likely showing examples of object instantiation
+            // or property access from another class (Person, Department).
+            //Person person = new Person();
+            //Console.WriteLine(person.Age);
+            // Department => Employees // This seems to be a conceptual note or a placeholder for future code.
+
+            #endregion
         }
     }
 }
