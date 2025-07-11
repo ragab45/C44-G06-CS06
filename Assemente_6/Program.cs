@@ -96,23 +96,43 @@
             //}
             #endregion
             #region Q-5
-            static bool IsPrime(int num)
-            {
-                if (num < 2) return false;
+            //static bool IsPrime(int num)
+            //{
+            //    if (num < 2) return false;
 
-                for (int i = 2; i <= Math.Sqrt(num); i++)
+            //    for (int i = 2; i <= Math.Sqrt(num); i++)
+            //    {
+            //        if (num % i == 0)
+            //            return false;
+            //    }
+            //    return true;
+            //}
+
+            //static void Main()
+            //{
+            //    Console.Write("Enter number: ");
+            //    int n = int.Parse(Console.ReadLine());
+            //    Console.WriteLine(IsPrime(n) ? "Prime" : "Not Prime");
+            //}
+            #endregion
+            #region Q-6
+            static void MinMaxArray(int[] arr, ref int min, ref int max)
+            {
+                min = max = arr[0];
+                foreach (int x in arr)
                 {
-                    if (num % i == 0)
-                        return false;
+                    if (x > max) max = x;
+                    if (x < min) min = x;
                 }
-                return true;
             }
 
             static void Main()
             {
-                Console.Write("Enter number: ");
-                int n = int.Parse(Console.ReadLine());
-                Console.WriteLine(IsPrime(n) ? "Prime" : "Not Prime");
+                int[] numbers = { 4, 7, 1, 9, 3 };
+                int min = 0, max = 0;
+
+                MinMaxArray(numbers, ref min, ref max);
+                Console.WriteLine($"Min = {min}, Max = {max}");
             }
             #endregion
 
