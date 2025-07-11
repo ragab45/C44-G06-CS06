@@ -32,7 +32,7 @@
         }
 
         
-            static void RefTypeByValue(MyClass obj)
+            static void RefTypeByValue(MyClass obj) 
             {
                 obj.Value = 10;       // Works
                 obj = new MyClass();  // Only local change
