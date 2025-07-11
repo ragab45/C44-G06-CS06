@@ -76,23 +76,43 @@
             //}
             #endregion
             #region  Q-4
-            static int SumDigits(int number)
+            //static int SumDigits(int number)
+            //{
+            //    int sum = 0;
+            //    while (number != 0)
+            //    {
+            //        sum += number % 10;
+            //        number /= 10;
+            //    }
+            //    return sum;
+            //}
+
+            //static void Main()
+            //{
+            //    Console.Write("Enter a number: ");
+            //    int num = int.Parse(Console.ReadLine());
+            //    int result = SumDigits(num);
+            //    Console.WriteLine($"The sum of the digits of {num} is: {result}");
+            //}
+            #endregion
+            #region Q-5
+            static bool IsPrime(int num)
             {
-                int sum = 0;
-                while (number != 0)
+                if (num < 2) return false;
+
+                for (int i = 2; i <= Math.Sqrt(num); i++)
                 {
-                    sum += number % 10;
-                    number /= 10;
+                    if (num % i == 0)
+                        return false;
                 }
-                return sum;
+                return true;
             }
 
             static void Main()
             {
-                Console.Write("Enter a number: ");
-                int num = int.Parse(Console.ReadLine());
-                int result = SumDigits(num);
-                Console.WriteLine($"The sum of the digits of {num} is: {result}");
+                Console.Write("Enter number: ");
+                int n = int.Parse(Console.ReadLine());
+                Console.WriteLine(IsPrime(n) ? "Prime" : "Not Prime");
             }
             #endregion
 
