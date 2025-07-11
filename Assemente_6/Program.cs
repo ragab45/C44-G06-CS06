@@ -58,21 +58,41 @@
             #region Q-3
 
 
+            //static void Main()
+            //{
+            //    Console.Write("Enter 4 numbers: ");
+            //    int a = int.Parse(Console.ReadLine());
+            //    int b = int.Parse(Console.ReadLine());
+            //    int c = int.Parse(Console.ReadLine());
+            //    int d = int.Parse(Console.ReadLine());
+
+            //    Calc(a, b, c, d, out int totalSum, out int totalDiff);
+            //    Console.WriteLine($"Sum: {totalSum}, Difference: {totalDiff}");
+            //}
+            //static void Calc(int a, int b, int c, int d, out int sum, out int diff)
+            //{
+            //    sum = a + b;
+            //    diff = c - d;
+            //}
+            #endregion
+            #region  Q-4
+            static int SumDigits(int number)
+            {
+                int sum = 0;
+                while (number != 0)
+                {
+                    sum += number % 10;
+                    number /= 10;
+                }
+                return sum;
+            }
+
             static void Main()
             {
-                Console.Write("Enter 4 numbers: ");
-                int a = int.Parse(Console.ReadLine());
-                int b = int.Parse(Console.ReadLine());
-                int c = int.Parse(Console.ReadLine());
-                int d = int.Parse(Console.ReadLine());
-
-                Calc(a, b, c, d, out int totalSum, out int totalDiff);
-                Console.WriteLine($"Sum: {totalSum}, Difference: {totalDiff}");
-            }
-            static void Calc(int a, int b, int c, int d, out int sum, out int diff)
-            {
-                sum = a + b;
-                diff = c - d;
+                Console.Write("Enter a number: ");
+                int num = int.Parse(Console.ReadLine());
+                int result = SumDigits(num);
+                Console.WriteLine($"The sum of the digits of {num} is: {result}");
             }
             #endregion
 
