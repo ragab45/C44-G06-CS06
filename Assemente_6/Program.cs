@@ -26,35 +26,56 @@
             //}
             #endregion
             #region  Q-2
-            class MyClass
-        {
-            public int Value;
-        }
+            //    class MyClass
+            //{
+            //    public int Value;
+            //}
 
-        
-            static void RefTypeByValue(MyClass obj) 
-            {
-                obj.Value = 10;       // Works
-                obj = new MyClass();  // Only local change
-                obj.Value = 99;
-            }
 
-            static void RefTypeByRef(ref MyClass obj)
-            {
-                obj = new MyClass();  // Changes original object
-                obj.Value = 100;
-            }
+            //    static void RefTypeByValue(MyClass obj) 
+            //    {
+            //        obj.Value = 10;       // Works
+            //        obj = new MyClass();  // Only local change
+            //        obj.Value = 99;
+            //    }
+
+            //    static void RefTypeByRef(ref MyClass obj)
+            //    {
+            //        obj = new MyClass();  // Changes original object
+            //        obj.Value = 100;
+            //    }
+
+            //    static void Main()
+            //    {
+            //        MyClass a = new MyClass();
+            //        RefTypeByValue(a);
+            //        Console.WriteLine($"ByValue: {a.Value}");  // Output: 10
+
+            //        RefTypeByRef(ref a);
+            //        Console.WriteLine($"ByRef: {a.Value}");    // Output: 100
+
+            #endregion
+            #region Q-3
+
 
             static void Main()
             {
-                MyClass a = new MyClass();
-                RefTypeByValue(a);
-                Console.WriteLine($"ByValue: {a.Value}");  // Output: 10
+                Console.Write("Enter 4 numbers: ");
+                int a = int.Parse(Console.ReadLine());
+                int b = int.Parse(Console.ReadLine());
+                int c = int.Parse(Console.ReadLine());
+                int d = int.Parse(Console.ReadLine());
 
-                RefTypeByRef(ref a);
-                Console.WriteLine($"ByRef: {a.Value}");    // Output: 100
-            
+                Calc(a, b, c, d, out int totalSum, out int totalDiff);
+                Console.WriteLine($"Sum: {totalSum}, Difference: {totalDiff}");
+            }
+            static void Calc(int a, int b, int c, int d, out int sum, out int diff)
+            {
+                sum = a + b;
+                diff = c - d;
+            }
             #endregion
+
         }
     }
-}
+    }
