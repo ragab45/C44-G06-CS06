@@ -34,49 +34,88 @@
 
             #endregion
             #region  V-2
-            // This is a method designed to swap two integer values.
-            // Note: In C#, for value types like int, passing by value means
-            // the original variables outside this method will not be swapped
-            // unless 'ref' or 'out' keywords are used. This example demonstrates
-            // swapping within the scope of the method.
-        public static void Swap(int A, int B)
+            //    // This is a method designed to swap two integer values.
+            //    // Note: In C#, for value types like int, passing by value means
+            //    // the original variables outside this method will not be swapped
+            //    // unless 'ref' or 'out' keywords are used. This example demonstrates
+            //    // swapping within the scope of the method.
+            //public static void Swap(int A, int B)
+            //{
+            //    Console.WriteLine("===================");
+            //    Console.WriteLine($"Before Swapping [Inside] => A => {A}, B => {B}");
+
+            //    // The tooltip in the image explains 'Int32' which is the underlying
+            //    // type for 'int' in C#, representing a 32-bit signed integer.
+
+            //    int temp = A;
+            //    A = B;
+            //    B = temp;
+
+            //    Console.WriteLine("=================== After Swapping [Inside] ===================");
+            //    Console.WriteLine($"A => {A}, B => {B}");
+            //    #endregion // This #endregion seems to be misplaced or ending a region that started within the method.
+            //    // Usually, regions encompass larger blocks of code.
+            //}
+
+            //static void Main(string[] args)
+            //{
+            //    Functions
+
+            //    // These lines are commented out, likely from previous examples
+            //    // related to the PrintShape method.
+            //    //PrintShape(shape: "%", count: 30);
+            //    //PrintShape("$");
+
+            //    int X = 10, Y = 20;
+
+            //    Console.WriteLine("=================== Before Swapping [Outside] ===================");
+            //    Console.WriteLine($"X => {X}, Y => {Y}"); // This line is partially visible in the image.
+
+            //    Swap(X, Y); // Calling the Swap method.
+            //                // As X and Y are value types, their values in Main
+            //                // will not change after this call.
+
+            //    
+            #endregion
+            #region  V-3
+            public static int SumArray(int[] array)
         {
-            Console.WriteLine("===================");
-            Console.WriteLine($"Before Swapping [Inside] => A => {A}, B => {B}");
+            // Prints the hash code of the array before processing.
+            // The hash code is a unique identifier for the object in memory.
+            Console.WriteLine($"Before HashCode [Inside] => {array.GetHashCode()}");
 
-            // The tooltip in the image explains 'Int32' which is the underlying
-            // type for 'int' in C#, representing a 32-bit signed integer.
+            int sum = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                sum += array[i]; // Adds each element of the array to the sum.
+            }
 
-            int temp = A;
-            A = B;
-            B = temp;
+            // Prints the hash code of the array after processing.
+            // It should be the same as before, indicating it's the same array object.
+            Console.WriteLine($"After HashCode [Inside] => {array.GetHashCode()}");
+            // Prints the first item of the array from inside the method.
+            Console.WriteLine($"Item Inside => {array[0]}");
 
-            Console.WriteLine("=================== After Swapping [Inside] ===================");
-            Console.WriteLine($"A => {A}, B => {B}");
-            #endregion // This #endregion seems to be misplaced or ending a region that started within the method.
-            // Usually, regions encompass larger blocks of code.
+            return sum; // Returns the calculated sum.
         }
 
         static void Main(string[] args)
         {
-            #region Functions
+           //Functions
 
             // These lines are commented out, likely from previous examples
-            // related to the PrintShape method.
+            // related to PrintShape and Swap methods.
             //PrintShape(shape: "%", count: 30);
             //PrintShape("$");
+            //int X = 10, Y = 20;
+            //Console.WriteLine("=================== Before Swapping [Outside] ===================");
+            //Console.WriteLine($"X => {X}, Y => {Y}");
+            //Swap(ref X, ref Y); // This line is commented out, but shows a call to a Swap method with 'ref'.
 
-            int X = 10, Y = 20;
-
-            Console.WriteLine("=================== Before Swapping [Outside] ===================");
-            Console.WriteLine($"X => {X}, Y => {Y}"); // This line is partially visible in the image.
-
-            Swap(X, Y); // Calling the Swap method.
-                        // As X and Y are value types, their values in Main
-                        // will not change after this call.
-
+            // The image ends here, implying that the Main method would call SumArray
+            // with an array as an argument in the next steps of the tut
             #endregion
-#endregion
+
         }
     }
 }
